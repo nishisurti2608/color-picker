@@ -1,6 +1,7 @@
 const userInputColorEl = document.getElementById("color-picker").value;
 const colorTypeEl = document.getElementById("color-type");
 const resultEl = document.getElementById("result");
+const hexCodes = document.getElementById("codes");
 let schemes;
 //preventing page refresh on submit button of form
 
@@ -29,14 +30,17 @@ function addSchemes(schemes) {
     });
 }
 
-//lets display data
+//lets display colors
 
 function renderColour(colors) {
-  const result = document.createElement("div");
-  result.id = "color-pallet";
+  if (colors.length > 0) {
+    const result = document.createElement("div");
+    result.id = "color-pallet";
 
-  colors.forEach((color) => {
-    result.innerHTML += `<div id="color-pallet" style="background-color:${color.hex.value}">${color.hex.value}</div>`;
-  });
-  resultEl.append(result);
+    colors.forEach((color) => {
+      result.innerHTML += `<div id="color-pallet" style="background-color:${color.hex.value}"> </div>`;
+      hexCodes.innerHTML += `<div id="codes">${color.hex.value}</div>`;
+    });
+    resultEl.append(result);
+  }
 }
