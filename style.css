@@ -3,9 +3,7 @@ margin:0;
 
 }
 
-#container{
-    display: flex;
-}
+
 
 #elements{
 
@@ -41,4 +39,13 @@ select{
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
+}
+#color-pallet{
+display: flex;
+color: white;
+height: 100vh;
+
+width: 100%;
+margin: 50px 0px;
+
 }

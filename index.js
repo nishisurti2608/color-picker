@@ -1,6 +1,6 @@
 const userInputColorEl = document.getElementById("color-picker").value;
 const colorTypeEl = document.getElementById("color-type");
-const containerEl = document.getElementById("container");
+const resultEl = document.getElementById("result");
 let schemes;
 //preventing page refresh on submit button of form
 
@@ -33,9 +33,10 @@ function addSchemes(schemes) {
 
 function renderColour(colors) {
   const result = document.createElement("div");
-  console.log(colors);
+  result.id = "color-pallet";
+
   colors.forEach((color) => {
-    result.innerHTML += `<img src=${color.image.named}>`;
+    result.innerHTML += `<div id="color-pallet" style="background-color:${color.hex.value}">${color.hex.value}</div>`;
   });
-  containerEl.append(result);
+  resultEl.append(result);
 }
